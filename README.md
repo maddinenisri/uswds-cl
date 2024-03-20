@@ -14,6 +14,7 @@ The library includes the following components:
 | ---------- | ------- |
 | Alert      | &check; |
 | Button     | &check; |
+| Checkbox   | &check; |
 
 Each component has its own set of props that can be used to customize its appearance and behavior.
 
