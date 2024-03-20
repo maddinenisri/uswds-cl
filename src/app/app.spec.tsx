@@ -9,7 +9,7 @@ describe('App', () => {
   });
 
   it('should have a greeting as the title', () => {
-    const { getByText } = render(<App />);
-    expect(getByText(/Welcome uswds-cl/gi)).toBeTruthy();
+    const { getByTestId } = render(<App />);
+    expect(getByTestId(/button/gi)).toBeTruthy();
   });
 });

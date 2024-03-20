@@ -1,0 +1,63 @@
+/*
+ * Replace this with your own classes
+ *
+ * e.g.
+ * .container {
+ * }
+*/
+$theme-show-notifications: false;
+@import 'uswds/packages/usa-alert/_index.scss';
+
+.usa-button-dismiss {
+  // hit area
+  height: 44px;
+  width: 44px;
+
+  // background
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center center;
+  background-image: url('../../assets/img/x.png');
+  background-image: url('../../assets/img/x.svg');
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+}
+
+form {
+  float: right;
+}
+
+.success {
+  @extend .usa-alert--success;
+}
+
+.info {
+  @extend .usa-alert--info;
+}
+
+.warning {
+  @extend .usa-alert--warning;
+}
+
+.error {
+  @extend .usa-alert--error;
+}
+
+.slim {
+  @extend .usa-alert--slim;
+}
+
+.no-icon {
+  @extend .usa-alert--no-icon;
+}
+
+.validation {
+  @extend .usa-alert--validation;
+}
