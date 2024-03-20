@@ -16,7 +16,7 @@ export const Primary = {
 };
 
 export const Heading: Story = {
-  args: {},
+  args: {children: <ul><li>List 1</li><li>List 2</li></ul>},
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     expect(canvas.getByTestId('alert')).toBeTruthy();

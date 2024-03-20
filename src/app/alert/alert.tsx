@@ -3,7 +3,7 @@ import styles from './alert.module.scss';
 import classnames from 'classnames';
 
 // Defining the AlertProps type
-export type AlertProps ={
+export type AlertProps = {
   id?: string;
   children?: React.ReactNode;
   dismissible?: boolean;
@@ -19,7 +19,6 @@ export type AlertProps ={
     | 'validation';
 };
 
-
 // Defining the Alert component
 export function Alert({
   id,
@@ -27,19 +26,18 @@ export function Alert({
   heading,
   message,
   dismissible,
+  children,
 }: AlertProps) {
   // Generating the alert classes based on the type
   const alertClasses = classnames('usa-alert', {
     [`usa-alert--${type}`]: !!type,
   });
 
-
   // Function to close the alert
   const closeAlert = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.currentTarget.closest('.usa-alert')?.remove();
   };
-
 
   // Rendering the Alert component
   return (
@@ -57,7 +55,8 @@ export function Alert({
       )}
       <div className="usa-alert__body">
         {heading && <h1 className="usa-alert__heading">{heading}</h1>}
-        <p className="usa-alert__text">{message}</p>
+        {message && <p className="usa-alert__text">{message}</p>}
+        {children && <div className="usa-alert__text">{children}</div>}
       </div>
     </div>
   );
