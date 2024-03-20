@@ -9,6 +9,7 @@ export type AlertProps = {
   dismissible?: boolean;
   heading?: string;
   message: string;
+  role?: string;
   type:
     | 'success'
     | 'warning'
@@ -27,6 +28,7 @@ export function Alert({
   message,
   dismissible,
   children,
+  role,
 }: AlertProps) {
   // Generating the alert classes based on the type
   const alertClasses = classnames('usa-alert', {
@@ -41,7 +43,7 @@ export function Alert({
 
   // Rendering the Alert component
   return (
-    <div className={alertClasses} title={type} data-testid={id}>
+    <div className={alertClasses} title={type} data-testid={id} role={role}>
       {dismissible && (
         <form className={styles['form']}>
           <button

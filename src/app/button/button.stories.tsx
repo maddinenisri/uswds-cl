@@ -11,11 +11,11 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary = {
-  args: {},
+export const Default = {
+  args: {children: 'Welcome to Button!',},
 };
 
-export const Heading: Story = {
+export const Primary: Story = {
   args: {
     children: 'Welcome to Button!',
     type: 'button',
