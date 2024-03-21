@@ -23,11 +23,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Affected Tests
-        run: npx nx affected:test
+      - name: Run Tests
+        run: npx nx test
 
-      - name: Affected Build
-        run: npx nx affected:build
+      - name: Run Build
+        run: npx nx build
 
       # This line is needed for nx affected to work when CI is running on a PR
       - run: git branch --track main origin/main
