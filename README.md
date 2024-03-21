@@ -10,11 +10,12 @@ To install the library, run the following command in your project directory:
 
 The library includes the following components:
 
-| Components | Status  |
-| ---------- | ------- |
-| Alert      | &check; |
-| Button     | &check; |
-| Checkbox   | &check; |
+| Components    | Status  |
+| ------------- | ------- |
+| Alert         | &check; |
+| Button        | &check; |
+| Checkbox      | &check; |
+| RadioButton   | &check; |
 
 Each component has its own set of props that can be used to customize its appearance and behavior.
 
