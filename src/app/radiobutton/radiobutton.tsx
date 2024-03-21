@@ -1,9 +1,7 @@
 import classnames from 'classnames';
 
-/**
- * Checkbox component properties
- */
-export type CheckboxProps = {
+// Radiobutton component props
+export type RadiobuttonProps = {
   id: string;
   name: string;
   className?: string;
@@ -22,48 +20,47 @@ export type CheckboxProps = {
 };
 
 /**
- * Checkbox component
+ * Radiobutton component
  */
-export function Checkbox({
+export function Radiobutton({
   id,
   name,
   className,
-  label,
-  labelDescription,
   checked,
   disabled,
+  label,
   tile,
-  onChange,
+  labelDescription,
   inputRef,
+  onChange,
   ...inputProps
-}: CheckboxProps) {
-  // Set the classnames for the checkbox
-  const divClassnames = classnames('usa-checkbox', className);
-  const checkboxClasses = classnames(
-    'usa-checkbox__input',
+}: RadiobuttonProps) {
+  // Set the classnames for the radiobutton
+  const divClassnames = classnames('usa-radio', className);
+  const radioClasses = classnames(
+    'usa-radio__input',
     {
-      'usa-checkbox__input--tile': tile,
+      'usa-radio__input--tile': tile,
     },
     className
   );
-
   return (
-    <div className={divClassnames} data-testid={id}>
+    <div data-testid={id} className={divClassnames}>
       <input
-        className={checkboxClasses}
+        className={radioClasses}
         id={id}
-        type="checkbox"
+        type="radio"
         name={name}
-        ref={inputRef}
         onChange={onChange}
         checked={checked}
         disabled={disabled}
+        ref={inputRef}
         {...inputProps}
       />
-      <label className="usa-checkbox__label" htmlFor={id}>
+      <label className="usa-radio__label" htmlFor={id}>
         {label}
         {labelDescription && (
-          <span className="usa-checkbox__label-description">
+          <span className="usa-radio__label-description">
             {labelDescription}
           </span>
         )}
@@ -72,10 +69,12 @@ export function Checkbox({
   );
 }
 
-Checkbox.defaultProps = {
+// Set the default props for the radiobutton
+Radiobutton.defaultProps = {
   checked: false,
   disabled: false,
   tile: false,
-}; 
+};
 
-export default Checkbox;
+// Export the radiobutton component
+export default Radiobutton;
